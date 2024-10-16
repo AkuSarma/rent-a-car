@@ -10,7 +10,7 @@ import NoPage from './pages/NoPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-slate-700 text-white">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

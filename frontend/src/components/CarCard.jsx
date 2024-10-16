@@ -2,7 +2,7 @@ import { Button } from "flowbite-react";
 
 const CarCard = ({car}) => {
   return (
-    <div>
+    <div className="hover:shadow-2xl p-4 rounded-lg">
       <img src="https://placehold.co/600x400" className="w-full" alt="" />
       <h1>{car}</h1>
       <p>

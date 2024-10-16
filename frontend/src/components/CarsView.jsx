@@ -1,4 +1,6 @@
 import CarCard from "./CarCard";
+import { useState } from "react";
+import { Pagination } from "flowbite-react";
 
 const CarsView = () => {
   const carsList = [
@@ -32,10 +34,14 @@ const CarsView = () => {
     "Magnite",
     "Kiger",
   ];
+  
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const onPageChange = (page) => setCurrentPage(page);
 
   return (
     <>
-      <form class="max-w-md mx-auto my-10">
+      <form class="max-w-[70vw] mx-auto my-10">
         <label
           for="default-search"
           class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -79,6 +85,14 @@ const CarsView = () => {
         {carsList.map((car) => (
           <CarCard car={car} />
         ))}
+      </div>
+
+      <div className="flex overflow-x-auto sm:justify-center">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={5}
+          onPageChange={onPageChange}
+        />
       </div>
     </>
   );

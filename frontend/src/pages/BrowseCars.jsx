@@ -1,9 +1,13 @@
-import React from 'react'
+import CarsView from '../components/CarsView';
 
 const BrowseCars = () => {
+
   return (
-    <div>BrowseCars</div>
-  )
+    <div className="px-[10vw]">
+      <CarsView />
+      
+    </div>
+  );
 }
 
 export default BrowseCars

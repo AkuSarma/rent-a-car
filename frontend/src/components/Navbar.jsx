@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggles the menu visibility
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (

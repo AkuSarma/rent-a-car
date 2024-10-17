@@ -40,7 +40,7 @@ const CarsView = () => {
   const onPageChange = (page) => setCurrentPage(page);
 
   return (
-    <>
+    <div className="py-[10vw]">
       <form class="max-w-[70vw] mx-auto my-10">
         <label
           for="default-search"
@@ -94,7 +94,7 @@ const CarsView = () => {
           onPageChange={onPageChange}
         />
       </div>
-    </>
+    </div>
   );
 }
 

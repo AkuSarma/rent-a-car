@@ -3,9 +3,8 @@ import CarsView from '../components/CarsView';
 const BrowseCars = () => {
 
   return (
-    <div className="px-[10vw]">
-      <CarsView />
-      
+    <div className="">
+      <CarsView carsPerPage={9} />
     </div>
   );
 }

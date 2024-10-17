@@ -1,8 +1,8 @@
-import CarCard from "./CarCard";
 import { useState } from "react";
+import CarCard from "./CarCard";
 import { Pagination } from "flowbite-react";
 
-const CarsView = ({ carsPerPage }) => {
+const CarsView = () => {
   const carsList = [
     "Nexon",
     "Nano",
@@ -36,16 +36,26 @@ const CarsView = ({ carsPerPage }) => {
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchText, setSearchText] = useState(""); // State to store search text
 
-  // Calculate the current slice of cars to show
+  const carsPerPage = 9;
+
+  const filteredCarsList = carsList.filter((car) =>
+    car.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   const startIndex = (currentPage - 1) * carsPerPage;
   const endIndex = startIndex + carsPerPage;
-  const currentCars = carsList.slice(startIndex, endIndex);
+  const currentCars = filteredCarsList.slice(startIndex, endIndex);
 
-  const totalPages = Math.ceil(carsList.length / carsPerPage);
+  const totalPages = Math.ceil(filteredCarsList.length / carsPerPage);
 
-  const onPageChange = (page) => {
-    setCurrentPage(page);
+  const onPageChange = (page) => setCurrentPage(page);
+
+  // Function to handle input change
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value); // Update search text state
+    setCurrentPage(1); // Reset to the first page when searching
   };
 
   return (
@@ -79,7 +89,9 @@ const CarsView = ({ carsPerPage }) => {
             type="search"
             id="default-search"
             className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search Mockups, Logos..."
+            placeholder="Search cars..."
+            value={searchText} // Bind input value to state
+            onChange={handleSearchChange} // Capture user input
             required
           />
           <button
@@ -92,17 +104,21 @@ const CarsView = ({ carsPerPage }) => {
       </form>
 
       <div className="grid md:grid-cols-3 gap-10 grid-cols-1">
-        {currentCars.map((car, index) => (
-          <CarCard key={index} car={car} />
-        ))}
+        {currentCars.length > 0 ? (
+          currentCars.map((car, index) => <CarCard key={index} car={car} />)
+        ) : (
+          <p>No cars found</p>
+        )}
       </div>
 
       <div className="flex overflow-x-auto sm:justify-center my-8">
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={onPageChange}
-        />
+        {filteredCarsList.length > 0 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
+          />
+        )}
       </div>
     </div>
   );

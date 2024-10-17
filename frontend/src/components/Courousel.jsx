@@ -7,7 +7,7 @@ import { Carousel } from "flowbite-react";
 
 const Courousel = () => {
     return(
-    <div className="h-[50vh] sm:h-[70vh] xl:h-[80vh] 2xl:h-96 w-full mx-auto my-8 bg-white">
+    <div className="h-[50vh] sm:h-[70vh] xl:h-[80vh] 2xl:h-96 w-full mx-auto bg-white">
       <Carousel slideInterval={1000}>
         <img className="max-w-full h-auto object-scale-down" src={second} alt="..." />
         <img className="max-w-full h-auto object-scale-down" src={third} alt="..." />

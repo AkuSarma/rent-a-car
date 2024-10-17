@@ -1,4 +1,5 @@
 import { Button } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 const CarCard = ({car}) => {
   return (
@@ -12,9 +13,11 @@ const CarCard = ({car}) => {
       </p>
       <p>Price: ₹1000 per day</p>
       <p>Available: Yes</p>
+      <Link to={`car-details/${car}`}>
       <Button color="blue" pill>
         Book
       </Button>
+      </Link>
     </div>
   );
 };

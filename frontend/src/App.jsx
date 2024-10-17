@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home/>} />
             <Route path="browse-cars" element={<BrowseCars />} />
-            <Route path="car-details" element={<CarDetails />} />
+            <Route path="car-details/:carId" element={<CarDetails />} />
             <Route path="registration" element={<Registration />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />

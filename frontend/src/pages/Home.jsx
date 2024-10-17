@@ -1,4 +1,3 @@
-import React from 'react'
 import Courousel from '../components/Courousel'
 import CarsView from '../components/CarsView'
 

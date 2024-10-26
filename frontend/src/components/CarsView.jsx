@@ -8,6 +8,7 @@ const CarsView = () => {
     "Nano",
     "I20",
     "Scorpio",
+    "Polo GT",
     "Thar",
     "Bolero",
     "XUV700",

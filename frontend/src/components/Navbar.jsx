@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from '../images/logo.png'
+import logo from "../images/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,18 +10,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="border-gray-200 bg-slate-800">
+    <nav className="sticky top-0 z-50 border-slate-700 bg-black bg-opacity-60 text-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img
-            src={logo}
-            className="h-8"
-            alt="rent-a-car logo"
-          />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+          <img src={logo} className="h-8" alt="rent-a-car logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap">
             rent-a-car
           </span>
         </Link>
@@ -67,7 +63,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="block py-2 px-3 md:p-0 text-white rounded md:bg-transparent hover:underline  "
+                className="block py-2 px-3 md:p-0 rounded md:bg-transparent hover:underline"
               >
                 Home
               </Link>
@@ -75,7 +71,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/browse-cars"
-                className="block py-2 px-3 md:p-0 text-white rounded md:bg-transparent hover:underline "
+                className="block py-2 px-3 md:p-0 rounded md:bg-transparent hover:underline"
               >
                 Browse Cars
               </Link>
@@ -83,7 +79,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className="block py-2 px-3 md:p-0 text-white rounded md:bg-transparent hover:underline "
+                className="block py-2 px-3 md:p-0 rounded md:bg-transparent hover:underline"
               >
                 Contact
               </Link>

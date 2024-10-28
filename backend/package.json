@@ -9,6 +9,11 @@
   "author": "Aku Sarma",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.3",
+    "uuid": "^11.0.1"
   }
 }

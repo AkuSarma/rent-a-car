@@ -7,6 +7,7 @@ import BrowseCars from './pages/BrowseCars';
 import Registration from './pages/Registration';
 import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="browse-cars" element={<BrowseCars />} />
             <Route path="car-details/:carId" element={<CarDetails />} />
             <Route path="registration" element={<Registration />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
           </Route>

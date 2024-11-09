@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
+import { useAuth } from "../context/authContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {user} = useAuth();
 
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,13 +28,10 @@ const Navbar = () => {
             type="button"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            {/* <Link to="/registration">Register</Link> */}
-            {isAuthenticated ? (
-              <span>
-                {user.name} <LogoutButton />
-              </span>
-            ) : (
-              <LoginButton />
+            {user?.name?(
+              <Link to="/profile">{user.name}</Link>
+            ):(
+              <Link to="/registration">Register</Link>
             )}
           </button>
           <button

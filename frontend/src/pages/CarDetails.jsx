@@ -1,7 +1,16 @@
 import { useParams } from "react-router-dom";
 import { Button, Datepicker } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/authContext";
 
 const CarDetails = () => {
+  const {user} = useAuth();
+  const navigate = useNavigate();
+
+  if (!user){
+    navigate("/registration");
+  }
+
   const { carId } = useParams();
 
   return (

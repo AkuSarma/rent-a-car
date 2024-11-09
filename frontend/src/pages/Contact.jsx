@@ -1,6 +1,16 @@
 import { Button } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/authContext";
 
 const Contact = () => {
+
+  const {user} = useAuth();
+  const navigate = useNavigate();
+
+  if (!user){
+    navigate("/registration");
+  }
+
   return (
     <section className="">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">

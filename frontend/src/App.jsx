@@ -8,22 +8,25 @@ import Registration from './pages/Registration';
 import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
 import Profile from './pages/Profile';
+import { AuthProvider } from './context/authContext';
 
 function App() {
   return (
     <div className="App text-black">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home/>} />
-            <Route path="browse-cars" element={<BrowseCars />} />
-            <Route path="car-details/:carId" element={<CarDetails />} />
-            <Route path="registration" element={<Registration />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="browse-cars" element={<BrowseCars />} />
+              <Route path="car-details/:carId" element={<CarDetails />} />
+              <Route path="registration" element={<Registration />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

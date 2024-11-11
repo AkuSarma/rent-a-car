@@ -30,8 +30,8 @@ A full-stack car rental application built with the MERN stack (MongoDB, Express,
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/car-rental-system.git
-   cd car-rental-system/backend
+   git clone https://github.com/AkuSarma/rent-a-car.git
+   cd rent-a-car
     ```
 
 2. **Run Backend**
@@ -42,6 +42,7 @@ A full-stack car rental application built with the MERN stack (MongoDB, Express,
     ```
 
 3. **Run Frontend**
+    > open a new terminal
     ```bash
     cd frontend
     npm install
